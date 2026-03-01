@@ -85,6 +85,9 @@
   color: var(--fg) !important;
   display: flex !important;
   flex-direction: column !important;
+  /* Override MDEditor's sans-serif default so all var(--md-editor-font-family)
+     references pick up our monospace font, keeping cursor and text aligned. */
+  --md-editor-font-family: var(--font);
 }
 
 .write-editor .w-md-editor-toolbar {
@@ -114,12 +117,23 @@
   overflow: auto !important;
 }
 
+/* The .w-md-editor-text container has hardcoded 14px/18px metrics; override
+   here so both the pre and textarea inherit the same values from one place. */
+.write-editor .w-md-editor-text {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
 /* Pre overlay: transparent background so textarea selection shows through;
    the .w-md-editor container provides the background color. */
 .write-editor .w-md-editor-text-pre {
   background: transparent !important;
   color: var(--fg) !important;
-  font-family: var(--font) !important;
+}
+
+/* The <code> inside the pre has its own hardcoded 14px/18px with !important;
+   match it exactly to the textarea metrics to keep cursor aligned. */
+.write-editor .w-md-editor-text-pre > code {
   font-size: 15px !important;
   line-height: 1.6 !important;
 }
@@ -132,14 +146,11 @@
   font-size: 15px !important;
 }
 
-/* Textarea: transparent so pre overlay is visible; line-height must match pre */
+/* Textarea: transparent so pre overlay is visible */
 .write-editor .w-md-editor-text-input {
   background: transparent !important;
   -webkit-text-fill-color: transparent !important;
   caret-color: var(--fg) !important;
-  font-family: var(--font) !important;
-  font-size: 15px !important;
-  line-height: 1.6 !important;
 }
 
 /* Make selected text visible: restore fill color and show a distinct highlight */
