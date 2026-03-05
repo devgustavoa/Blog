@@ -50,6 +50,7 @@ export default function PostReader() {
   return (
     <div className="reader-layout">
       <Navbar />
+      <div className="reader-scroll">
       <div className="reader-container">
         <button className="reader-back" onClick={() => navigate('/')}>
           [..]
@@ -110,6 +111,7 @@ export default function PostReader() {
             </div>
           </>
         )}
+      </div>
       </div>
 
       <StatusBar

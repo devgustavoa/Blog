@@ -55,6 +55,7 @@ export default function PostList() {
   return (
     <div className="postlist-layout">
       <Navbar />
+      <div className="postlist-scroll">
       <div className="postlist-container" ref={listRef}>
         <div className="postlist-parent">..</div>
 
@@ -77,6 +78,7 @@ export default function PostList() {
             </span>
           </div>
         ))}
+      </div>
       </div>
 
       <StatusBar

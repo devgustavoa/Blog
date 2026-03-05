@@ -5,9 +5,12 @@
   padding-bottom: 22px; /* clear fixed statusbar */
 }
 
-.reader-container {
+.reader-scroll {
   flex: 1;
   overflow-y: auto;
+}
+
+.reader-container {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 24px 20px 48px;

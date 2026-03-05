@@ -5,11 +5,14 @@
   padding-bottom: 22px; /* status bar height */
 }
 
-.postlist-container {
+.postlist-scroll {
   flex: 1;
   overflow-y: auto;
+}
+
+.postlist-container {
   padding: 16px 24px;
-  max-width: 1100px;
+  max-width: var(--content-width);
   width: 100%;
   margin: 0 auto;
 }
